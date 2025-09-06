@@ -10,12 +10,3 @@ for t in p:
     total_time += waiting_time  # 그 사람의 실제 대기 시간 합산
 
 print(total_time)
-
-
-# waiting_time
-# 지금까지 처리한 사람들의 시간을 누적해서 더한 값
-# 즉, "앞 사람들 때문에 기다려야 하는 시간"을 포함한 현재 사람의 대기 시간
-# 예를 들어 정렬된 시간이 [1,2,3]일 때:
-# 첫 번째 사람: waiting_time = 1
-# 두 번째 사람: waiting_time = 1+2 = 3
-# 세 번째 사람: waiting_time = 3+3 = 6
