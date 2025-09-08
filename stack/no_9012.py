@@ -1,7 +1,7 @@
 n = int(input())   # 테스트케이스 개수
 
 for _ in range(n):
-    s = input().strip()
+    s = input()
     stack = []
     valid = True
 

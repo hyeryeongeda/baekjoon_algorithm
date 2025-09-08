@@ -11,5 +11,5 @@ def score(line):
 
 n = int(input())
 for _ in range(n):
-    line = input().strip()
+    line = input()
     print(score(line))
