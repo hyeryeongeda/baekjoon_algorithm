@@ -1,19 +1,42 @@
-T = int(input())
-for _ in range(T):
-    s = input().strip()
-    cnt = 0
-    valid = True
+while True:
+    s = input().rstrip()
+    if s == '.':
+        break
+
+    stack = []
+    ok = True
 
     for ch in s:
-        if ch == '(':
-            cnt += 1
-        else:  # ch == ')'
-            cnt -= 1
-            if cnt < 0:  # 닫는 괄호가 더 많아지면 실패
-                valid = False
-                break
+        if ch in '([':
+            stack.append(ch)
+        elif ch == ')':
+            if not stack or stack.pop() != '(':
+                ok = False; break
+        elif ch == ']':
+            if not stack or stack.pop() != '[':
+                ok = False; break
 
-    if cnt != 0:   # 다 끝났는데 짝이 안 맞음
-        valid = False
+    print('yes' if ok and not stack else 'no')
 
-    print("YES" if valid else "NO")
+
+# import sys
+
+# def yesorno(s) :
+#     stack=list()
+#     pair={ ')' : '(', ']' : '[' }
+#     for char in s :
+#         if char in '([' :
+#             stack.append(char)
+#         elif char in ")]" :
+#             if not stack or stack.pop()!=pair.get(char) :
+#                 return False
+#     return not stack
+    
+# while True :
+#     sentence = sys.stdin.readline().rstrip()
+#     if sentence=='.' :
+#         break
+#     if yesorno(sentence) :
+#         print("yes")
+#     else :
+#         print("no")
